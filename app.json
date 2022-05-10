@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "interfocus-pokedex-code",
+    "slug": "interfocus-pokedex-code",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "interfocus-pokedex-code"
+}
