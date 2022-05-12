@@ -42,6 +42,4 @@ export const InputTexto = styled.TextInput`
   border-color: ${({theme}) => theme.ligth_gray};
   padding: 4px 10px;
   margin-top: 8px;
-
-
 `;

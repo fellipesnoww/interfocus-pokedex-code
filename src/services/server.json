@@ -1,0 +1,305 @@
+{
+    "pokemons": [
+        {
+            "id": 1,
+            "code": "#001",
+            "name": "Bulbasaur",
+            "about": {
+                "weight": "6,9 kg",
+                "height": "0,7 m",
+                "description": "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger."
+            },
+            "moves": [{
+                "id": 1,
+                "name": "Chlorophyll"
+                },
+                {
+                    "id": 2,
+                    "name": "Overgrow"
+                }
+            ],
+            "base_stats":{
+                "hp": "045",
+                "atk": "049",
+                "def": "049",
+                "satk": "065",
+                "sdef": "065",
+                "spd": "045"
+            },
+            "types": [
+                {
+                    "id": 1,
+                    "name": "grass"
+                },
+                {
+                    "id": 2,
+                    "name": "poison"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "code": "#004",
+            "name": "Charmander",
+            "about": {
+                "weight": "8,5 kg",
+                "height": "0,6 m",
+                "description": "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail."
+            },
+            "moves": [{
+                "id": 1,
+                "name": "Mega-Punch"
+                },
+                {
+                    "id": 2,
+                    "name": "Fire-Punch"
+                }
+            ],
+            "base_stats":{
+                "hp": "039",
+                "atk": "052",
+                "def": "043",
+                "satk": "060",
+                "sdef": "050",
+                "spd": "065"
+            },
+            "types": [
+                {
+                    "id": 1,
+                    "name": "fire"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "code": "#007",
+            "name": "Squirtle",
+            "about": {
+                "weight": "9.0 kg",
+                "height": "0.5 m",
+                "description": "When it retracts its long neck into its shell, it squirts out water with vigorous force."
+            },
+            "moves": [{
+                "id": 1,
+                "name": "Torrent"
+                },
+                {
+                    "id": 2,
+                    "name": "Rain-Dish"
+                }
+            ],
+            "base_stats":{
+                "hp": "044",
+                "atk": "048",
+                "def": "065",
+                "satk": "050",
+                "sdef": "064",
+                "spd": "043"
+            },
+            "types": [
+                {
+                    "id": 1,
+                    "name": "water"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "code": "#012",
+            "name": "Butterfree",
+            "about": {
+                "weight": "32,0 kg",
+                "height": "1,1 m",
+                "description": "In battle, it flaps its wings at great speed to release highly toxic dust into the air."
+            },
+            "moves": [{
+                "id": 1,
+                "name": "Compound-Eyes"
+                },
+                {
+                    "id": 2,
+                    "name": "Tinted-Lens"
+                }
+            ],
+            "base_stats":{
+                "hp": "060",
+                "atk": "045",
+                "def": "050",
+                "satk": "090",
+                "sdef": "080",
+                "spd": "070"
+            },
+            "types": [
+                {
+                    "id": 1,
+                    "name": "bug"
+                },
+                {
+                    "id": 2,
+                    "name": "flying"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "code": "#025",
+            "name": "Pikachu",
+            "about": {
+                "weight": "6,0 kg",
+                "height": "0,4 m",
+                "description": "Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy."
+            },
+            "moves": [{
+                "id": 1,
+                "name": "Mega-Punch"
+                },
+                {
+                    "id": 2,
+                    "name": "Pay-Day"
+                }
+            ],
+            "base_stats":{
+                "hp": "035",
+                "atk": "055",
+                "def": "040",
+                "satk": "050",
+                "sdef": "050",
+                "spd": "090"
+            },
+            "types": [
+                {
+                    "id": 1,
+                    "name": "electric"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "code": "#092",
+            "name": "Gastly",
+            "about": {
+                "weight": "0,1 kg",
+                "height": "1,3 m",
+                "description": "Born from gases, anyone would faint if engulfed by its gaseous body, which contains poison."
+            },
+            "moves": [{
+                "id": 1,
+                "name": "Levitate"
+                }                
+            ],
+            "base_stats":{
+                "hp": "030",
+                "atk": "035",
+                "def": "030",
+                "satk": "100",
+                "sdef": "035",
+                "spd": "080"
+            },
+            "types": [
+                {
+                    "id": 1,
+                    "name": "ghost"
+                }               
+            ]
+        },
+        {
+            "id": 7,
+            "code": "#132",
+            "name": "Ditto",
+            "about": {
+                "weight": "4,0 kg",
+                "height": "0,3 m",
+                "description": "It can reconstitute its entire cellular structure to change into what it sees, but it returns to normal when it relaxes."
+            },
+            "moves": [{
+                "id": 1,
+                "name": "Limber"
+                },
+                {
+                    "id": 2,
+                    "name": "Imposter"
+                }                 
+            ],
+            "base_stats":{
+                "hp": "048",
+                "atk": "048",
+                "def": "048",
+                "satk": "048",
+                "sdef": "048",
+                "spd": "048"
+            },
+            "types": [
+                {
+                    "id": 1,
+                    "name": "normal"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "code": "#152",
+            "name": "Mew",
+            "about": {
+                "weight": "4,0 kg",
+                "height": "0,4 m",
+                "description": "When viewed through a microscope, this Pokémon’s short, fine, delicate hair can be seen."
+            },
+            "moves": [{
+                "id": 1,
+                "name": "Synchronize"
+                }                               
+            ],
+            "base_stats":{
+                "hp": "100",
+                "atk": "100",
+                "def": "100",
+                "satk": "100",
+                "sdef": "100",
+                "spd": "100"
+            },
+            "types": [
+                {
+                    "id": 1,
+                    "name": "psychic"
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "code": "#304",
+            "name": "Aron",
+            "about": {
+                "weight": "60,0 kg",
+                "height": "0,4 m",
+                "description": "It eats iron ore - and sometimes railroad tracks - to build up the steel armor that protects its body."
+            },
+            "moves": [{
+                "id": 1,
+                "name": "Sturdy"
+                },
+                {
+                    "id": 2,
+                    "name": "Rock-Head"
+                    }                                
+            ],
+            "base_stats":{
+                "hp": "050",
+                "atk": "070",
+                "def": "100",
+                "satk": "040",
+                "sdef": "040",
+                "spd": "030"
+            },
+            "types": [
+                {
+                    "id": 1,
+                    "name": "steel"
+                },
+                {
+                    "id": 2,
+                    "name": "rock"
+                }
+            ]
+        }
+    ]
+}

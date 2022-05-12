@@ -4,10 +4,12 @@
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "start-server": "json-server ./src/services/server.json --host 192.168.10.246 --port 3000"
   },
   "dependencies": {
     "@expo-google-fonts/poppins": "^0.2.2",
+    "axios": "^0.27.2",
     "expo": "~45.0.0",
     "expo-font": "~10.1.0",
     "expo-splash-screen": "~0.15.1",

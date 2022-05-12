@@ -1,11 +1,18 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+interface Props{
+    type: string;
+}
+
+export const Container = styled.TouchableOpacity<Props>`
     width: 104px;
     height: 112px;
     border-radius: 8px;
     border-width: 1px;
-    border-color: ${({theme}) => theme.fire};
+    border-color: ${({theme, type}) => theme[type]};
+    background-color: ${({theme, type}) => theme.white};
+
+    margin: 8px 8px 8px 0px;
 `;
 
 export const ConteudoCodigo = styled.View`
@@ -15,10 +22,10 @@ export const ConteudoCodigo = styled.View`
     padding: 4px 8px 0px 8px;
 `;
 
-export const Codigo = styled.Text`
+export const Codigo = styled.Text<Props>`
     font-size: 8px;
     font-family: ${({theme}) => theme.fonts.REGULAR};
-    color: ${({theme}) => theme.fire};
+    color: ${({theme, type}) => theme[type]};
 `;
 
 export const ConteudoSvg = styled.View`
@@ -26,11 +33,11 @@ export const ConteudoSvg = styled.View`
     justify-content: center;
 `;
 
-export const ConteudoNome = styled.View`
+export const ConteudoNome = styled.View<Props>`
     width: 100%;
     align-items: center;
     justify-content: center;
-    background-color: ${({theme}) => theme.fire};
+    background-color: ${({theme, type}) => theme[type]};
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     padding: 4px 8px;
