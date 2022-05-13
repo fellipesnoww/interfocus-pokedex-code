@@ -78,6 +78,7 @@ function Home(){
                     placeholder="Procurar"
                     onChangeText={(texto) => alteraNomeFiltro(texto)}
                     keyboardAppearance="dark"
+                    value={nomeFiltro}
                 />
                 <FlatList
                     data={pokemonsFiltro}
