@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { FlatList, Keyboard, TouchableWithoutFeedback } from "react-native";
 
@@ -7,7 +8,6 @@ import SortDesc from '../../assets/icons/sortdesc.svg';
 import SmallCard from "../../components/SmallCard";
 import { PokemonDTO } from "../../dtos/PokemonDTO";
 import api from "../../services/api";
-
 
 import {
     Container,
@@ -25,6 +25,15 @@ function Home(){
     const [pokemons, setPokemons] = useState<PokemonDTO[]>([]);
     const [pokemonsFiltro, setPokemonsFiltro] = useState<PokemonDTO[]>([]);
 
+    const navigation = useNavigation();
+
+
+    function navegarParaDetalhes(pokemon: PokemonDTO){
+        console.log('a')
+        navigation.navigate('Detalhes' as never, {
+            pokemon
+        } as never);
+    }
 
     function alteraTipoFiltro(){
         setDecrescente(estadoAnterior => !estadoAnterior);
@@ -92,7 +101,10 @@ function Home(){
                         width: '100%'
                     }}
                     renderItem={({item}) => (
-                        <SmallCard pokemon={item}/>
+                        <SmallCard 
+                            pokemon={item}
+                            onPress={() => navegarParaDetalhes(item)}
+                        />
                     )}
                 />
 

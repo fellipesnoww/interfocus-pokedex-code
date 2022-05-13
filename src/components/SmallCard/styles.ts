@@ -5,6 +5,7 @@ interface Props{
     type: PokemonName;
 }
 
+
 export const Container = styled.TouchableOpacity<Props>`
     width: 104px;
     height: 112px;
