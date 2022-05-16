@@ -6,7 +6,7 @@ interface Props {
 }
 
 
-export const Container = styled.View<Props>`
+export const Container = styled.ScrollView<Props>`
     flex: 1;
     padding: 4px 4px;
     background-color: ${({theme, type}) => theme[type]};
@@ -53,10 +53,36 @@ export const Conteudo = styled.View`
     background-color: ${({theme}) => theme.white};
     border-radius: 8px;
     padding: 0 20px;
+    padding-bottom: 50px;
     align-items: center;
 `;
 
 export const ConteudoSvg = styled.View`
     margin-top: -130px;
     position: absolute;
+`;
+
+export const Tipos = styled.View`
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    margin-top: 70px;
+`;
+
+export const LabelDestaque = styled.Text<Props>`
+    font-family: ${({theme}) => theme.fonts.BOLD};
+    color: ${({theme, type}) => theme[type]};
+    font-size: 14px;
+`;
+
+export const Sobre = styled.Text`
+    font-family: ${({theme}) => theme.fonts.REGULAR};
+    color: ${({theme}) => theme.dark_gray};
+    font-size: 10px;
+    line-height: 16px;
+    text-align: justify;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
 `;
