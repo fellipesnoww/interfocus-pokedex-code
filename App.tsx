@@ -7,6 +7,7 @@ import { Poppins_400Regular, Poppins_700Bold } from '@expo-google-fonts/poppins'
 import Home from './src/screens/Home';
 import Detalhes from './src/screens/Detalhes';
 import Routes from './src/routes';
+import {AuthProvider} from './src/hooks/auth';
 
 export default function App() {
 
@@ -23,7 +24,10 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Routes />
+      <AuthProvider>
+        <Routes />
+
+      </AuthProvider>
     </ThemeProvider>
   );
 }
