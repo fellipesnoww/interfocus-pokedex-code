@@ -26,7 +26,6 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <AuthProvider>
         <Routes />
-
       </AuthProvider>
     </ThemeProvider>
   );

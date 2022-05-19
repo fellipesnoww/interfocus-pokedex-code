@@ -1,4 +1,4 @@
-import { useNavigation } from "@react-navigation/native";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { FlatList, Keyboard, TouchableWithoutFeedback } from "react-native";
 
@@ -32,7 +32,6 @@ function Home(){
     }
 
     function alteraNomeFiltro(nome: string){
-        console.log(nome);
         setNomeFiltro(nome);
         const filtrados = pokemons.filter(p => p.name.toLowerCase().includes(nome.toLowerCase()));
         setPokemonsFiltro(filtrados);
@@ -44,7 +43,6 @@ function Home(){
             const filtro = decrescente ? '?_sort=name&_order=desc' : '?_sort=name&_order=asc';
     
             const resposta = await api.get<PokemonDTO[]>(`/pokemons${filtro}`);
-            console.log(resposta.data);
             if(resposta.data && resposta.data.length > 0){
                 setPokemons(resposta.data);
                 setPokemonsFiltro(resposta.data);

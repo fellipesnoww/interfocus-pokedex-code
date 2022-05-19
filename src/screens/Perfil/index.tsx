@@ -25,7 +25,7 @@ function Perfil (){
                         }} 
                     />
                 </BackgroundImage>
-                <Titulo>{usuario}</Titulo>
+                <Titulo>{usuario?.usuarioNome}</Titulo>
                 <BotaoSair
                     onPress={logoff}
                 >
