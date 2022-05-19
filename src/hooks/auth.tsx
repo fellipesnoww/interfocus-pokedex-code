@@ -46,7 +46,8 @@ function AuthProvider({children}: AuthProviderProps) {
 
             if(result.type === 'success'){
                 redirectData = Linking.parse(result.url);
-                console.log(redirectData);
+                console.log('url quebrada', redirectData);
+                
                 const codePosAuth = redirectData.queryParams["code"];
                 const usuarioIas = await getDadosCode(codePosAuth);
                 setUsuario(usuarioIas);
