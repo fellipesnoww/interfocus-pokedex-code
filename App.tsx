@@ -13,13 +13,14 @@ import { FavoriteProvider } from './src/hooks/favorite';
 
 export default function App() {
 
-  const [teste, setTeste] = useState(false);
-
+  
   const [fontsLoaded] = useFonts({
     Poppins_700Bold,
     Poppins_400Regular
   });
-
+  
+  const [teste, setTeste] = useState(false);
+  
   function alteraState(){
     setTimeout(() => {
       setTeste(true)
