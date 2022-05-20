@@ -9,6 +9,7 @@ import Detalhes from './src/screens/Detalhes';
 import Routes from './src/routes';
 import {AuthProvider} from './src/hooks/auth';
 import SplashScreen from './src/screens/SplashScreen';
+import { FavoriteProvider } from './src/hooks/favorite';
 
 export default function App() {
 
@@ -26,7 +27,9 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <AuthProvider>
-        <Routes />
+        <FavoriteProvider>
+          <Routes />
+        </FavoriteProvider>
       </AuthProvider>
     </ThemeProvider>
   );

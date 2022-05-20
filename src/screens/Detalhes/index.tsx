@@ -1,4 +1,4 @@
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { useIsFocused, useNavigation, useRoute } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 import { PokemonDTO } from "../../dtos/PokemonDTO";
@@ -12,46 +12,44 @@ import BaseStats from "../../components/BaseStats";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { FavoritoDTO } from "../../dtos/FavoritoDTO";
 import { useAuth } from "../../hooks/auth";
+import { useFavorite } from "../../hooks/favorite";
 interface ParametrosRota{
     pokemon: PokemonDTO;
 }
-
-const FAVORITOS_KEY = '@pokedex:favoritos';
 
 
 function Detalhes(){
 
     const [pokemon, setPokemon] = useState<PokemonDTO>();
-    const {usuario} = useAuth();
+    const [isFavorito, setIsFavorito] = useState(false);
+    const {addFavorito} = useFavorite();
     const tema = useTheme();
     const route = useRoute();
+    const {verificaFavoritado} = useFavorite();
+
+    async function verificaFavoritos(id:number) {
+        const resultado = await verificaFavoritado(id);
+        setIsFavorito(resultado);
+    }
+
+    const isFocused = useIsFocused();
 
     useEffect(() => {
         const parametros = route.params as ParametrosRota;
         console.log(parametros.pokemon);
         setPokemon(parametros.pokemon);
-    },[]);
+        verificaFavoritos(parametros.pokemon.id)
+    },[isFocused]);
 
     const navigation = useNavigation();
 
     function voltar(){
         navigation.goBack();
     }
-
-    async function addFavoritos(pokemon: PokemonDTO){
-
-        const favoritosStorage = await AsyncStorage.getItem(FAVORITOS_KEY);
-
-            const favoritosParse = favoritosStorage ? 
-                JSON.parse(favoritosStorage) as FavoritoDTO[] : [];
-            
-            favoritosParse.push({
-                id: Math.random(),
-                pokemon,
-                usuario: usuario!
-            });
-
-            await AsyncStorage.setItem(FAVORITOS_KEY, JSON.stringify(favoritosParse))
+    
+    async function addPokemonFav(pokemon: PokemonDTO){
+        await addFavorito(pokemon);
+        setIsFavorito(state => !state);
     }
 
     if(!pokemon) return <View/>
@@ -75,13 +73,21 @@ function Detalhes(){
                     <Codigo>{pokemon.code}</Codigo>
                 </ConteudoTitulo>
                 <BotaoHeader
-                    onPress={() => addFavoritos(pokemon)}
+                    onPress={() => addPokemonFav(pokemon)}
                 >
-                    <MaterialCommunityIcons 
-                        name="heart"
-                        size={22}
-                        color={tema.white}
-                    />
+                    {isFavorito ? (
+                        <MaterialCommunityIcons
+                            name="heart"
+                            size={22}
+                            color={tema.background}                        
+                        />
+                        ) : (                        
+                            <Feather
+                                name="heart"
+                                size={22}
+                                color={tema.background}                        
+                            />
+                    )} 
                 </BotaoHeader>
             </Header>
             <Conteudo>
