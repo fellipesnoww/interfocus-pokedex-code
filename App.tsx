@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { ThemeProvider } from 'styled-components';
 import theme from './src/styles/theme';
@@ -13,12 +13,24 @@ import { FavoriteProvider } from './src/hooks/favorite';
 
 export default function App() {
 
+  const [teste, setTeste] = useState(false);
+
   const [fontsLoaded] = useFonts({
     Poppins_700Bold,
     Poppins_400Regular
   });
 
-  if(!fontsLoaded){
+  function alteraState(){
+    setTimeout(() => {
+      setTeste(true)
+    }, 7000);
+  }
+
+  useEffect(() => {
+    alteraState()
+  }, [])
+
+  if(!fontsLoaded || !teste){
     return (
       <SplashScreen/>
     );
