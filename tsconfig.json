@@ -5,6 +5,7 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "jsx": "react-native",
+    "resolveJsonModule": true,
     "lib": [
       "es2017"
     ],

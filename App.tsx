@@ -8,6 +8,7 @@ import Home from './src/screens/Home';
 import Detalhes from './src/screens/Detalhes';
 import Routes from './src/routes';
 import {AuthProvider} from './src/hooks/auth';
+import SplashScreen from './src/screens/SplashScreen';
 
 export default function App() {
 
@@ -18,7 +19,7 @@ export default function App() {
 
   if(!fontsLoaded){
     return (
-      <View/>
+      <SplashScreen/>
     );
   }
 

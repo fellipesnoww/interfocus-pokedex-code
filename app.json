@@ -5,7 +5,11 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "splash": {
+      "image": "./src/assets/splashscreen.png",
+      "backgroundColor": "#F7F7F7"
+    }
   },
   "name": "interfocus-pokedex-code"
 }
