@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { ThemeProvider } from 'styled-components';
 import theme from './src/styles/theme';
@@ -8,24 +8,41 @@ import Home from './src/screens/Home';
 import Detalhes from './src/screens/Detalhes';
 import Routes from './src/routes';
 import {AuthProvider} from './src/hooks/auth';
+import SplashScreen from './src/screens/SplashScreen';
+import { FavoriteProvider } from './src/hooks/favorite';
 
 export default function App() {
 
+  
   const [fontsLoaded] = useFonts({
     Poppins_700Bold,
     Poppins_400Regular
   });
+  
+  const [teste, setTeste] = useState(false);
+  
+  function alteraState(){
+    setTimeout(() => {
+      setTeste(true)
+    }, 7000);
+  }
 
-  if(!fontsLoaded){
+  useEffect(() => {
+    alteraState()
+  }, [])
+
+  if(!fontsLoaded || !teste){
     return (
-      <View/>
+      <SplashScreen/>
     );
   }
 
   return (
     <ThemeProvider theme={theme}>
       <AuthProvider>
-        <Routes />
+        <FavoriteProvider>
+          <Routes />
+        </FavoriteProvider>
       </AuthProvider>
     </ThemeProvider>
   );
